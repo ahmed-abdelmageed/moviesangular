@@ -1,0 +1,55 @@
+<div style="margin-top:100px; " class="container">
+
+    <nav  class="d-flex justify-content-center" aria-label="Page navigation">
+      <ul class="pagination pages">
+   
+        <li class="page-item cursor-pointer "><a class="page-link" (click)="getPage(1)">1</a></li>
+        <li class="page-item"><a class="page-link " (click)="getPage(2)">2</a></li>
+        <li class="page-item"><a class="page-link" (click)="getPage(3)">3</a></li>
+        <li class="page-item"><a class="page-link" (click)="getPage(4)">4</a></li>
+        <li class="page-item"><a class="page-link" (click)="getPage(5)">5</a></li>
+        <li class="page-item"><a class="page-link" (click)="getPage(6)">6</a></li>
+        <li class="page-item"><a class="page-link" (click)="getPage(7)">7</a></li>
+        <li class="page-item"><a class="page-link" (click)="getPage(8)">8</a></li>
+        <li class="page-item"><a class="page-link" (click)="getPage(9)">9</a></li>
+        <li class="page-item"><a class="page-link" (click)="getPage(10)">10</a></li>
+        <li class="page-item"><a class="page-link" (click)="getPage(11)">11</a></li>
+        <li class="page-item"><a class="page-link" (click)="getPage(12)">12</a></li>
+   
+      </ul>
+    </nav>
+    
+    <div class="row pt-5" id="tv">
+        <!-- <div class="col-md-4 d-flex align-items-center">
+    
+            <div>
+    
+                <div class="brdr w-25 mb-4"></div>
+                <h2>Trending Tv Shows to watch<br> Right Now</h2>
+                <p class="second-color my-2">most watched Tv by days</p>
+                <div class="brdr w-75 mt-4"></div>
+    
+            </div>
+         
+    
+            
+        </div> -->
+    
+        <div *ngFor= 'let tv of tv' class="col-md-2">
+            <div class="movie my-2 position-relative" [routerLink]='["/tvDetails" , tv.id]'>
+     
+                <img class="w-100" [src]="imgPrefix+tv.poster_path" [alt]="tv.title">
+    
+                <h3 class="my-2 h6">{{tv.name}}</h3>
+    
+                <div class="vote">
+    
+                    {{tv.vote_average}}
+    
+                </div>
+    
+            </div>
+        </div>
+    </div>
+  
+  </div>

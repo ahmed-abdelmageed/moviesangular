@@ -1,0 +1,33 @@
+
+<div class=" container py-5  d-flex justify-content-center align-items-center">
+    <div class="py row m-auto  container">
+        <div class="col-md-4 justify-content-center align-items-center">
+            <img [src]="imgPrefix+tvDetailes?.poster_path" [alt]="tvDetailes.title" class="w-100" />
+        </div>
+        <div class="mt-2 offset-1 col-md-7">
+            <h2 class="   text-white fw-bolder ">{{tvDetailes.name}}</h2>
+            <h2 class="fs-2 text-white fw-bolder mt-2 ">{{tvDetailes.tagline}}</h2>
+            <p *ngFor="let item of this.tvDetailes.genres" class="d-inline mx-2 ">
+                <a class="btn btn-info text-black mt-3">{{item.name}}</a>
+            </p>
+            <div class="mt-4">
+                <label class="fs-4">Vote : </label><span class="text-muted font-monospace fs-5">{{" "+tvDetailes.vote_average}}</span>
+            </div>
+            <div class="mt-4">
+                <label class="fs-4">Vote Count : </label><span class="text-muted font-monospace fs-5">{{" "+tvDetailes.vote_count}}</span>
+            </div>
+            <div class="mt-4">
+                <label class="fs-4">Popularity : </label><span class="text-muted font-monospace fs-5">{{" "+tvDetailes.popularity}}</span>
+            </div>
+            <div class="mt-4">
+                <label class="fs-4">Release Date : </label><span class="text-muted font-monospace fs-5">{{" "+tvDetailes.last_air_date}}</span>
+            </div>
+            <div class="mt-4">
+                <label class="fs-3">Movie Description  : </label><span class="text-white-50 font-monospace fs-5">{{" "+tvDetailes.overview}}</span>
+            </div>
+    
+    
+    
+        </div>
+    </div>
+</div>

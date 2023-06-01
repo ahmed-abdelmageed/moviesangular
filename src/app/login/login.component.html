@@ -1,0 +1,65 @@
+<div class="d-flex    vh-100 justify-content-center align-items-center">
+     
+    <div class="py py-5     container w-75 bg-dark rounded-3">
+        <h1 class="text-center py-3 text-info  "> Login Now</h1>
+    
+        <div *ngIf="error"
+        class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error!</strong> {{error}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+     
+        <form class="m-auto w-75" [formGroup]="loginForm" (ngSubmit)="login(loginForm)">
+          
+            <!-- Email -->
+            <div class="form-group">
+                <label for="Email">Email : </label>
+                <input formControlName="email" type="email" id="Email" class="form-control"
+                    placeholder="enter your email" aria-describedby="helpId">
+                <div class="mt-2"
+                    *ngIf="loginForm.get('email')?.errors!=null&& loginForm.get('email')?.touched">
+                    <div *ngIf="loginForm.get('email')?.errors?.['required']"
+                        class=" alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>Email</strong> is required
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    <div *ngIf="loginForm.get('email')?.errors?.['email']"
+                        class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>Email</strong> not valid
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+     
+                </div>
+    
+            </div>
+    
+            <!-- password -->
+            <div class="form-group">
+                <label for="password">password : </label>
+                <input formControlName="password" type="password" id="password" class="form-control"
+                    placeholder="enter your password" aria-describedby="helpId">
+                <div class="mt-2"
+                    *ngIf="loginForm.get('password')?.errors!=null&& loginForm.get('password')?.touched">
+                    <div *ngIf="loginForm.get('password')?.errors?.['required']"
+                        class=" alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>password</strong> is required
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    <div *ngIf="loginForm.get('password')?.errors?.['password']"
+                        class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>password</strong> not valid
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+     
+                </div>
+    
+            </div>
+            
+    
+    
+    
+            <button   class="btn mt-3 btn-primary"  >Login</button>
+    
+        </form>
+    </div>
+    </div>
