@@ -28,10 +28,10 @@ export class AuthService {
 
   register(formData: any): Observable<any> {
 
-    return this._HttpClient.post('https://sticky-note-fe.vercel.app/signup', formData);
+    return this._HttpClient.post('https://route-ecommerce-app.vercel.app/api/v1/auth/signup', formData);
   }
   signIn(login: any): Observable<any> {
-    return this._HttpClient.post("https://sticky-note-fe.vercel.app/signin", login)
+    return this._HttpClient.post("https://route-ecommerce-app.vercel.app/api/v1/auth/signin", login)
   }
 
   logout() {

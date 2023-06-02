@@ -14,11 +14,11 @@ export class RegistrationComponent {
   constructor(private _AuthService: AuthService, private _Router: Router) { }
   registerForm = new FormGroup({
 
-    first_name: new FormControl(null, [Validators.required, Validators.minLength(3), Validators.maxLength(10)]),
-    last_name: new FormControl(null, [Validators.required, Validators.minLength(3), Validators.maxLength(10)]),
+    name: new FormControl(null, [Validators.required, Validators.minLength(3), Validators.maxLength(10)]),
+    phone: new FormControl(null, [Validators.required]),
     email: new FormControl(null, [Validators.required, Validators.email]),
     password: new FormControl(null, [Validators.required]),
-    age: new FormControl(null, [Validators.required, Validators.min(15), Validators.max(80)]),
+    rePassword: new FormControl(null, [Validators.required]),
   })
 
 
